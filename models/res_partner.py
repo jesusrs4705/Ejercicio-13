@@ -13,8 +13,8 @@ class ResPartner(models.Model):
             # Verificar si el usuario actual tiene el permiso de Administración/Configuración
             if not self.env.user.has_group('base.group_system'):
                 raise AccessError(_(
-                    'No tiene permisos para modificar el contacto asociado a la compañía. '
-                    'Solo usuarios con permisos de Administración/Configuración pueden realizar esta acción.'
+                    'You do not have permission to modify the contact associated with the company. '
+                    'Only users with Administration/Settings permissions can perform this action.'
                 ))
         
         return super(ResPartner, self).write(vals)
